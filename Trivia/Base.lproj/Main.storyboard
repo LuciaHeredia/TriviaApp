@@ -16,6 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wp4587617" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l34-0a-mn9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="regular"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="7w9-Kp-7cU">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
@@ -29,8 +33,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="393" id="3pX-On-abg"/>
                                             <constraint firstItem="b2C-hq-rSm" firstAttribute="centerY" secondItem="llF-f5-uu6" secondAttribute="centerY" id="4DY-wY-45u"/>
                                             <constraint firstAttribute="height" constant="393" id="ToD-Xi-W1S"/>
                                             <constraint firstItem="b2C-hq-rSm" firstAttribute="centerX" secondItem="llF-f5-uu6" secondAttribute="centerX" id="htu-57-qd2"/>
@@ -57,13 +62,13 @@
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="867-nN-Uib">
                                                 <rect key="frame" x="131" y="272" width="152" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal"/>
@@ -73,19 +78,26 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7w9-Kp-7cU" secondAttribute="bottom" id="4qt-Fb-vbx"/>
+                            <constraint firstItem="l34-0a-mn9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8kV-wy-U4s"/>
+                            <constraint firstItem="l34-0a-mn9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ETj-fr-EkC"/>
                             <constraint firstItem="7w9-Kp-7cU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MKz-Kg-3nn"/>
+                            <constraint firstItem="l34-0a-mn9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="R7V-yY-Pc1"/>
+                            <constraint firstItem="l34-0a-mn9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WvR-1Z-IrY"/>
                             <constraint firstItem="7w9-Kp-7cU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Za2-t7-dGv"/>
+                            <constraint firstAttribute="bottom" secondItem="l34-0a-mn9" secondAttribute="bottom" id="ga2-Bg-Bz8"/>
                             <constraint firstItem="7w9-Kp-7cU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="njC-Bd-1p5"/>
+                            <constraint firstItem="l34-0a-mn9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rem-du-NrR"/>
                             <constraint firstItem="7w9-Kp-7cU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xCr-Kc-Ezh"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129.91071428571428" y="94.20289855072464"/>
+            <point key="canvasLocation" x="128.98550724637681" y="93.75"/>
         </scene>
     </scenes>
     <resources>
+        <image name="wp4587617" width="1898" height="3082"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
