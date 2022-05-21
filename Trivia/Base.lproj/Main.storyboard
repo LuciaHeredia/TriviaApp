@@ -35,9 +35,9 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="393" id="3pX-On-abg"/>
                                             <constraint firstItem="b2C-hq-rSm" firstAttribute="centerY" secondItem="llF-f5-uu6" secondAttribute="centerY" id="4DY-wY-45u"/>
                                             <constraint firstAttribute="height" constant="393" id="ToD-Xi-W1S"/>
+                                            <constraint firstAttribute="width" constant="414" id="UMd-Pa-3ED"/>
                                             <constraint firstItem="b2C-hq-rSm" firstAttribute="centerX" secondItem="llF-f5-uu6" secondAttribute="centerX" id="htu-57-qd2"/>
                                         </constraints>
                                     </view>
