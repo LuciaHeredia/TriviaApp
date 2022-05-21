@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C38765CA2839615B00AFE5D6 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38765C92839615B00AFE5D6 /* QuestionBank.swift */; };
 		C39188282838E1CA00E5EABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39188272838E1CA00E5EABA /* AppDelegate.swift */; };
 		C391882A2838E1CA00E5EABA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39188292838E1CA00E5EABA /* SceneDelegate.swift */; };
 		C391882C2838E1CA00E5EABA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391882B2838E1CA00E5EABA /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C38765C92839615B00AFE5D6 /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuestionBank.swift; path = ../QuestionBank.swift; sourceTree = "<group>"; };
 		C39188242838E1CA00E5EABA /* Trivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C39188272838E1CA00E5EABA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C39188292838E1CA00E5EABA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		C39188262838E1CA00E5EABA /* Trivia */ = {
 			isa = PBXGroup;
 			children = (
+				C38765C92839615B00AFE5D6 /* QuestionBank.swift */,
 				C391884228392D0D00E5EABA /* flags.json */,
 				C391882B2838E1CA00E5EABA /* ViewController.swift */,
 				C391883B2839042100E5EABA /* GameViewController.swift */,
@@ -153,6 +156,7 @@
 				C391882C2838E1CA00E5EABA /* ViewController.swift in Sources */,
 				C39188282838E1CA00E5EABA /* AppDelegate.swift in Sources */,
 				C391882A2838E1CA00E5EABA /* SceneDelegate.swift in Sources */,
+				C38765CA2839615B00AFE5D6 /* QuestionBank.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +305,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89375JY592;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Trivia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -329,6 +334,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 89375JY592;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Trivia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
