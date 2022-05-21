@@ -13,6 +13,7 @@
 		C391882F2838E1CA00E5EABA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C391882D2838E1CA00E5EABA /* Main.storyboard */; };
 		C39188312838E1CB00E5EABA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C39188302838E1CB00E5EABA /* Assets.xcassets */; };
 		C39188342838E1CB00E5EABA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C39188322838E1CB00E5EABA /* LaunchScreen.storyboard */; };
+		C391883C2839042100E5EABA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391883B2839042100E5EABA /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C39188302838E1CB00E5EABA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C39188332838E1CB00E5EABA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C39188352838E1CB00E5EABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C391883B2839042100E5EABA /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				C39188272838E1CA00E5EABA /* AppDelegate.swift */,
 				C39188292838E1CA00E5EABA /* SceneDelegate.swift */,
 				C391882B2838E1CA00E5EABA /* ViewController.swift */,
+				C391883B2839042100E5EABA /* GameViewController.swift */,
 				C391882D2838E1CA00E5EABA /* Main.storyboard */,
 				C39188302838E1CB00E5EABA /* Assets.xcassets */,
 				C39188322838E1CB00E5EABA /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C391883C2839042100E5EABA /* GameViewController.swift in Sources */,
 				C391882C2838E1CA00E5EABA /* ViewController.swift in Sources */,
 				C39188282838E1CA00E5EABA /* AppDelegate.swift in Sources */,
 				C391882A2838E1CA00E5EABA /* SceneDelegate.swift in Sources */,

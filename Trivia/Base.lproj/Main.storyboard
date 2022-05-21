@@ -47,10 +47,14 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JY2-C9-oYn">
                                                 <rect key="frame" x="145" y="107" width="125" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" systemColor="systemPinkColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="START">
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lEN-Ct-oYC"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Top Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9P-L6-UHq">
                                                 <rect key="frame" x="149" y="229" width="116" height="35"/>
@@ -90,10 +94,40 @@
                             <constraint firstItem="7w9-Kp-7cU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xCr-Kc-Ezh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scoreTextView" destination="867-nN-Uib" id="z0V-6i-zUp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="128.98550724637681" y="93.75"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="noy-ks-V1G">
+            <objects>
+                <viewController storyboardIdentifier="game" id="v7H-OV-v2z" customClass="GameViewController" customModule="Trivia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="geR-3o-UO6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wp4587617" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nDD-1k-uFf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="regular"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="340-dc-aq7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="nDD-1k-uFf" secondAttribute="bottom" id="ALJ-5j-wqB"/>
+                            <constraint firstItem="nDD-1k-uFf" firstAttribute="leading" secondItem="340-dc-aq7" secondAttribute="leading" id="POV-Fz-09V"/>
+                            <constraint firstItem="nDD-1k-uFf" firstAttribute="trailing" secondItem="340-dc-aq7" secondAttribute="trailing" id="uQZ-Uq-Ra9"/>
+                            <constraint firstItem="nDD-1k-uFf" firstAttribute="top" secondItem="geR-3o-UO6" secondAttribute="top" id="xLs-DW-kXd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ADj-Kj-DCH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897" y="105"/>
         </scene>
     </scenes>
     <resources>
@@ -103,6 +137,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
