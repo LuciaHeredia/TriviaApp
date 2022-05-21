@@ -23,14 +23,11 @@ class GameViewController: UIViewController {
     @IBOutlet weak var optionD: UIButton!
     
     var currentScore: Int = 0, previousScore: Int = 0
-    var gameNumber: Int = 0, totalGames: Int = 3 // 15
+    var gameNumber: Int = 0, totalGames: Int = 2 // 15
+    var livesNumber: Int = 3
     var selectedAnswear: Int = 0
     
     var allQuestions = QuestionBank()
-    
-    let flagNames = ["1-in","2-jp","3-it","4-hn","5-jm",
-                     "6-ke","7-az","8-ie","9-ge","10-fr",
-                     "11-fi","12-es","13-dk","14-ar","15-cl"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,24 +37,30 @@ class GameViewController: UIViewController {
     @IBAction func answerPressed(_ sender: UIButton) {
         if sender.tag == selectedAnswear {
             print("correct")
-            currentScore += 1
-            currentScoreLabel.text = currentScore.description
-            gameNumber += 1
-            questionLabel.text = gameNumber.description + "/15"
-            // update BAR
-            //updateQuestion
-        } else {
-            if totalGames>0 {
-                // number of lives decreases
-                totalGames -= 1
-                livesLabel.text = "x " + totalGames.description
+            if gameNumber <  totalGames {
+                currentScore += 1
+                currentScoreLabel.text = currentScore.description
+                gameNumber += 1
+                questionLabel.text = gameNumber.description + "/15"
+                // update BAR
+                updateQuestion()
             } else {
                 //popup game over
-                //go back to main screen
+                // if score is high, put to home
+                backToHome()
+            }
+        } else {
+            if livesNumber>0 {
+                // number of lives decreases
+                livesNumber -= 1
+                livesLabel.text = "x " + livesNumber.description
+            } else {
+                //popup game over
+                // if score is high, put to home
+                backToHome()
             }
         }
     }
-    
 
     func updateQuestion() {
         flagImageView.image = UIImage(named: (allQuestions.list[gameNumber].questionImage))
@@ -72,6 +75,10 @@ class GameViewController: UIViewController {
         //optionA.setTitle(questionBank[0].optionA, for: .normal)
     }
     
-    
+    func backToHome() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "home") as! ViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
 
 }

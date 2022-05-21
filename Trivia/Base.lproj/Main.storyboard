@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Trivia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home" id="BYZ-38-t0r" customClass="ViewController" customModule="Trivia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,6 +52,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="START">
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
+                                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lEN-Ct-oYC"/>
@@ -134,22 +135,20 @@
                                                 <rect key="frame" x="62" y="81" width="290" height="290"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="1/15" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ra-1I-lTh">
-                                                <rect key="frame" x="323" y="26" width="60" height="34"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGL-u2-nn4">
+                                                <rect key="frame" x="74" y="32" width="29" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="tintColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="x 3" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Czu-71-ydy">
-                                                <rect key="frame" x="62" y="27" width="42" height="34"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1/15" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPK-7w-mR0">
+                                                <rect key="frame" x="330" y="33" width="53" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="tintColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -163,6 +162,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Button">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="answerPressed:" destination="v7H-OV-v2z" eventType="touchUpInside" id="t9N-Oi-bPy"/>
@@ -175,6 +175,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Button">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="answerPressed:" destination="v7H-OV-v2z" eventType="touchUpInside" id="HHw-B0-naA"/>
@@ -187,6 +188,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Button">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="answerPressed:" destination="v7H-OV-v2z" eventType="touchUpInside" id="fsg-gC-7g5"/>
@@ -199,6 +201,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Button">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="answerPressed:" destination="v7H-OV-v2z" eventType="touchUpInside" id="N01-Cp-rff"/>
@@ -245,14 +248,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="currentScoreLabel" destination="ltX-Ls-6YO" id="xb3-Zy-wQw"/>
                         <outlet property="flagImageView" destination="GI7-RH-af3" id="VnG-k5-G2r"/>
-                        <outlet property="livesTextField" destination="Czu-71-ydy" id="KP6-y0-zw8"/>
+                        <outlet property="livesLabel" destination="YGL-u2-nn4" id="5ib-0Z-TgM"/>
                         <outlet property="optionA" destination="p0y-v7-xLh" id="okM-X3-cVX"/>
                         <outlet property="optionB" destination="fkt-qx-6H3" id="G2f-QX-lSA"/>
                         <outlet property="optionC" destination="H8j-1X-Vpa" id="p9X-4W-N7d"/>
                         <outlet property="optionD" destination="Rew-Ba-xh1" id="7a2-UQ-6e5"/>
                         <outlet property="progressView" destination="uAj-86-vNE" id="xZH-FR-1dc"/>
-                        <outlet property="questionTextField" destination="1ra-1I-lTh" id="jOn-ia-9aO"/>
+                        <outlet property="questionLabel" destination="lPK-7w-mR0" id="PNM-mZ-CLw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ADj-Kj-DCH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
