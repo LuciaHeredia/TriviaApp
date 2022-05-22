@@ -31,33 +31,45 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // update
+        questionLabel.text = (gameNumber+1).description + "/" + (totalGames+1).description
+        progressView.frame.size.width = (view.frame.size.width / CGFloat(allQuestions.list.count)) * CGFloat(gameNumber + 1)
+        // start questions
         updateQuestion()
     }
     
     @IBAction func answerPressed(_ sender: UIButton) {
         if sender.tag == selectedAnswear {
-            print("correct")
             if gameNumber <  totalGames {
+                // score increases
                 currentScore += 1
                 currentScoreLabel.text = currentScore.description
+                // number of game increases
                 gameNumber += 1
-                questionLabel.text = gameNumber.description + "/15"
-                // update BAR
+                questionLabel.text = (gameNumber+1).description + "/" + (totalGames+1).description
+                // progress bar
+                progressView.frame.size.width = (view.frame.size.width / CGFloat(allQuestions.list.count)) * CGFloat(gameNumber + 1)
+                // TODO: update BAR
+                // next question
                 updateQuestion()
             } else {
-                //popup game over
-                // if score is high, put to home
-                backToHome()
+                if currentScore > previousScore {
+                    // TODO: if score is high, put to home
+                    showAlert(titleMsg: "Congratulations", msg: "You beat the top score!")
+                } else {
+                    showAlert(titleMsg: "Game Over", msg: "You didn't beat the top score!")
+                }
             }
         } else {
-            if livesNumber>0 {
+            if livesNumber>1 {
                 // number of lives decreases
                 livesNumber -= 1
                 livesLabel.text = "x " + livesNumber.description
             } else {
-                //popup game over
-                // if score is high, put to home
-                backToHome()
+                // number of lives decreases
+                livesNumber -= 1
+                livesLabel.text = "x " + livesNumber.description
+                showAlert(titleMsg: "Game Over", msg: "You Lost!")
             }
         }
     }
@@ -70,9 +82,22 @@ class GameViewController: UIViewController {
         optionD.setTitle(allQuestions.list[gameNumber].optionD, for: UIControl.State.normal)
         selectedAnswear = allQuestions.list[gameNumber].correctAnswer
     }
-
-    func updateUI(){
-        //optionA.setTitle(questionBank[0].optionA, for: .normal)
+    
+    func showAlert(titleMsg: String, msg: String) {
+        // Create a new alert
+        let dialogMessage = UIAlertController(title: titleMsg, message: msg, preferredStyle: .alert)
+        
+        // Create button with action handler
+         let backHome = UIAlertAction(title: "Back Home", style: .default, handler: { (action) -> Void in
+             print("Back To Home button tapped")
+             self.backToHome()
+          })
+         
+        //Add button to a dialog message
+        dialogMessage.addAction(backHome)
+        
+        // Present Alert to
+        self.present(dialogMessage, animated: true, completion: nil)
     }
     
     func backToHome() {
@@ -81,4 +106,5 @@ class GameViewController: UIViewController {
         present(vc, animated: true)
     }
 
+    
 }
