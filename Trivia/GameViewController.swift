@@ -32,8 +32,6 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: update previousScore
-
         // update
         totalGames = allQuestions.list.count - 1
         questionLabel.text = (gameNumber+1).description + "/" + (totalGames+1).description

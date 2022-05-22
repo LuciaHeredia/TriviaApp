@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     @objc func getTopScore(_ notification: Notification) {
         let text = notification.object as! String?
         scoreTextView.text = text
+        // save score
         userDefaults.setValue(scoreTextView.text, forKey: "score")
     }
     
@@ -34,11 +35,7 @@ class ViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: "game") as! GameViewController
         vc.modalPresentationStyle = .fullScreen
         vc.previousScore = Int(scoreTextView.text) ?? 0
-        // save in shared preferences
         present(vc, animated: true)
     }
     
-
-
 }
-
