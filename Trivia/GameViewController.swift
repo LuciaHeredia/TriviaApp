@@ -32,7 +32,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // update previousScore
+        // TODO: update previousScore
 
         // update
         totalGames = allQuestions.list.count - 1

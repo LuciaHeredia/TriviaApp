@@ -11,14 +11,13 @@ class QuestionBank {
     var list = [Question]()
     
     init(){
+        
         list.append(Question(image: "1-in", choiceA: "Scotland", choiceB: "Senegal", choiceC: "Ireland", choiceD: "India", answer: 4))
         
         list.append(Question(image: "2-jp", choiceA: "Ecuador", choiceB: "Japan", choiceC: "Georgia", choiceD: "Mexico", answer: 2))
         
         list.append(Question(image: "3-it", choiceA: "Italy", choiceB: "Uzbekistan", choiceC: "Honduras", choiceD: "Turkey", answer: 1))
-        
-        // enable at the end
-        /*
+
         list.append(Question(image: "4-hn", choiceA: "Argentina", choiceB: "Honduras", choiceC: "Nicaragua", choiceD: "Netherlands", answer: 2))
         
         list.append(Question(image: "5-jm", choiceA: "Namibia", choiceB: "Lithuania", choiceC: "Jamaica", choiceD: "Algeria", answer: 3))
@@ -42,7 +41,7 @@ class QuestionBank {
         list.append(Question(image: "14-ar", choiceA: "Nicaragua", choiceB: "Argentina", choiceC: "Argentina", choiceD: "Philippine", answer: 2))
         
         list.append(Question(image: "15-cl", choiceA: "Chile", choiceB: "Kazakhstan", choiceC: "Russia", choiceD: "Uzbekistan", answer: 1))
-    */
+    
     }
     
     
