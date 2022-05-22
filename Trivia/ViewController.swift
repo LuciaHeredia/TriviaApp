@@ -13,12 +13,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(getTopScore(_:)), name: Notification.Name("topScore"), object: nil)
+    }
+    
+    @objc func getTopScore(_ notification: Notification) {
+        let text = notification.object as! String?
+        scoreTextView.text = text
     }
     
     @IBAction func startGame(_ sender: UIButton) {
+        
         let vc = storyboard?.instantiateViewController(withIdentifier: "game") as! GameViewController
         vc.modalPresentationStyle = .fullScreen
+        // save in shared preferences
         present(vc, animated: true)
     }
     

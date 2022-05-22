@@ -8,8 +8,7 @@
 import UIKit
 
 class GameViewController: UIViewController {
-
-    
+        
     @IBOutlet weak var livesLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var flagImageView: UIImageView!
@@ -22,22 +21,27 @@ class GameViewController: UIViewController {
     @IBOutlet weak var optionC: UIButton!
     @IBOutlet weak var optionD: UIButton!
     
-    var currentScore: Int = 0, previousScore: Int = 0
-    var gameNumber: Int = 0, totalGames: Int = 2 // 15
-    var livesNumber: Int = 3
-    var selectedAnswear: Int = 0
     
     var allQuestions = QuestionBank()
     
+    var currentScore: Int = 0, previousScore: Int = 0
+    var gameNumber: Int = 0, totalGames: Int = 0
+    var livesNumber: Int = 3
+    var selectedAnswear: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // update previousScore
+
         // update
+        totalGames = allQuestions.list.count - 1
         questionLabel.text = (gameNumber+1).description + "/" + (totalGames+1).description
         progressView.frame.size.width = (view.frame.size.width / CGFloat(allQuestions.list.count)) * CGFloat(gameNumber + 1)
         // start questions
         updateQuestion()
     }
-    
+
     @IBAction func answerPressed(_ sender: UIButton) {
         if sender.tag == selectedAnswear {
             if gameNumber <  totalGames {
@@ -53,8 +57,13 @@ class GameViewController: UIViewController {
                 // next question
                 updateQuestion()
             } else {
+                // score increases
+                currentScore += 1
+                currentScoreLabel.text = currentScore.description
+                
                 if currentScore > previousScore {
-                    // TODO: if score is high, put to home
+                    previousScore = currentScore
+                    saveTopScore()
                     showAlert(titleMsg: "Congratulations", msg: "You beat the top score!")
                 } else {
                     showAlert(titleMsg: "Game Over", msg: "You didn't beat the top score!")
@@ -69,7 +78,14 @@ class GameViewController: UIViewController {
                 // number of lives decreases
                 livesNumber -= 1
                 livesLabel.text = "x " + livesNumber.description
-                showAlert(titleMsg: "Game Over", msg: "You Lost!")
+                
+                if currentScore > previousScore {
+                    previousScore = currentScore
+                    saveTopScore()
+                    showAlert(titleMsg: "Congratulations", msg: "You beat the top score!")
+                } else {
+                    showAlert(titleMsg: "Game Over", msg: "You didn't beat the top score!")
+                }
             }
         }
     }
@@ -100,10 +116,12 @@ class GameViewController: UIViewController {
         self.present(dialogMessage, animated: true, completion: nil)
     }
     
+    func saveTopScore() {
+        NotificationCenter.default.post(name: Notification.Name("topScore"), object: previousScore.description)
+    }
+    
     func backToHome() {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "home") as! ViewController
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        dismiss(animated: true, completion: nil)
     }
 
     
