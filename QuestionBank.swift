@@ -38,7 +38,7 @@ class QuestionBank {
         
         list.append(Question(image: "13-dk", choiceA: "Denmark", choiceB: "Portugal", choiceC: "Switzerland", choiceD: "Austria", answer: 1))
         
-        list.append(Question(image: "14-ar", choiceA: "Nicaragua", choiceB: "Argentina", choiceC: "Argentina", choiceD: "Philippine", answer: 2))
+        list.append(Question(image: "14-ar", choiceA: "Nicaragua", choiceB: "Argentina", choiceC: "Israel", choiceD: "Philippine", answer: 2))
         
         list.append(Question(image: "15-cl", choiceA: "Chile", choiceB: "Kazakhstan", choiceC: "Russia", choiceD: "Uzbekistan", answer: 1))
     
