@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class GameViewController: UIViewController {
         
@@ -20,7 +21,11 @@ class GameViewController: UIViewController {
     @IBOutlet weak var optionB: UIButton!
     @IBOutlet weak var optionC: UIButton!
     @IBOutlet weak var optionD: UIButton!
-    
+        
+    let storage = Storage.storage()
+    var reference: StorageReference!
+    let initPath = "gs://triviaapp-0522.appspot.com/"
+    let imageEnding = ".png"
     
     var allQuestions = QuestionBank().list
     
@@ -31,7 +36,6 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // update
         totalGames = allQuestions.count - 1
         questionLabel.text = (gameNumber+1).description + "/" + (totalGames+1).description
@@ -89,7 +93,23 @@ class GameViewController: UIViewController {
     }
 
     func updateQuestion() {
-        flagImageView.image = UIImage(named: (allQuestions[gameNumber].questionImage))
+        loadImageFromFirebase()
+        loadButtonsFromFirebase()
+    }
+    
+    func loadImageFromFirebase() {
+        let imagePath = initPath + allQuestions[gameNumber].questionImage + imageEnding
+        reference = storage.reference(forURL: imagePath)
+
+        reference.downloadURL { (url, error) in
+            print("image downloaded!")
+            let data = NSData(contentsOf: url!)
+            let image = UIImage(data: data! as Data)
+            self.flagImageView.image = image
+        }
+    }
+    
+    func loadButtonsFromFirebase() {
         optionA.setTitle(allQuestions[gameNumber].optionA, for: UIControl.State.normal)
         optionB.setTitle(allQuestions[gameNumber].optionB, for: UIControl.State.normal)
         optionC.setTitle(allQuestions[gameNumber].optionC, for: UIControl.State.normal)
@@ -124,3 +144,4 @@ class GameViewController: UIViewController {
 
     
 }
+
