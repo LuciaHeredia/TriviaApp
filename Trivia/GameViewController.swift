@@ -22,7 +22,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var optionD: UIButton!
     
     
-    var allQuestions = QuestionBank()
+    var allQuestions = QuestionBank().list
     
     var currentScore: Int = 0, previousScore: Int = 0
     var gameNumber: Int = 0, totalGames: Int = 0
@@ -33,9 +33,9 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         // update
-        totalGames = allQuestions.list.count - 1
+        totalGames = allQuestions.count - 1
         questionLabel.text = (gameNumber+1).description + "/" + (totalGames+1).description
-        progressView.frame.size.width = (view.frame.size.width / CGFloat(allQuestions.list.count)) * CGFloat(gameNumber + 1)
+        progressView.frame.size.width = (view.frame.size.width / CGFloat(allQuestions.count)) * CGFloat(gameNumber + 1)
         // start questions
         updateQuestion()
     }
@@ -50,7 +50,7 @@ class GameViewController: UIViewController {
                 gameNumber += 1
                 questionLabel.text = (gameNumber+1).description + "/" + (totalGames+1).description
                 // progress bar
-                progressView.frame.size.width = (view.frame.size.width / CGFloat(allQuestions.list.count)) * CGFloat(gameNumber + 1)
+                progressView.frame.size.width = (view.frame.size.width / CGFloat(allQuestions.count)) * CGFloat(gameNumber + 1)
                 // TODO: update BAR
                 // next question
                 updateQuestion()
@@ -89,12 +89,12 @@ class GameViewController: UIViewController {
     }
 
     func updateQuestion() {
-        flagImageView.image = UIImage(named: (allQuestions.list[gameNumber].questionImage))
-        optionA.setTitle(allQuestions.list[gameNumber].optionA, for: UIControl.State.normal)
-        optionB.setTitle(allQuestions.list[gameNumber].optionB, for: UIControl.State.normal)
-        optionC.setTitle(allQuestions.list[gameNumber].optionC, for: UIControl.State.normal)
-        optionD.setTitle(allQuestions.list[gameNumber].optionD, for: UIControl.State.normal)
-        selectedAnswear = allQuestions.list[gameNumber].correctAnswer
+        flagImageView.image = UIImage(named: (allQuestions[gameNumber].questionImage))
+        optionA.setTitle(allQuestions[gameNumber].optionA, for: UIControl.State.normal)
+        optionB.setTitle(allQuestions[gameNumber].optionB, for: UIControl.State.normal)
+        optionC.setTitle(allQuestions[gameNumber].optionC, for: UIControl.State.normal)
+        optionD.setTitle(allQuestions[gameNumber].optionD, for: UIControl.State.normal)
+        selectedAnswear = allQuestions[gameNumber].correctAnswer
     }
     
     func showAlert(titleMsg: String, msg: String) {

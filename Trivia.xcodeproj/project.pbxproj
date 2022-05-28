@@ -64,6 +64,7 @@
 		C39188262838E1CA00E5EABA /* Trivia */ = {
 			isa = PBXGroup;
 			children = (
+				C391883E2839296D00E5EABA /* Question.swift */,
 				C38765C92839615B00AFE5D6 /* QuestionBank.swift */,
 				C391884228392D0D00E5EABA /* flags.json */,
 				C391882B2838E1CA00E5EABA /* ViewController.swift */,
@@ -74,7 +75,6 @@
 				C39188302838E1CB00E5EABA /* Assets.xcassets */,
 				C39188322838E1CB00E5EABA /* LaunchScreen.storyboard */,
 				C39188352838E1CB00E5EABA /* Info.plist */,
-				C391883E2839296D00E5EABA /* Question.swift */,
 			);
 			path = Trivia;
 			sourceTree = "<group>";
@@ -323,7 +323,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -352,7 +352,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
