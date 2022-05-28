@@ -12,6 +12,7 @@ public class QuestionBank {
     
     init() {
         load()
+        shuffleList()
     }
     
     func load() {
@@ -27,8 +28,8 @@ public class QuestionBank {
         }
     }
     
-    func sort() {
-        //self.list = self.list.sort()
+    func shuffleList() {
+        self.list.shuffle()
     }
         
 }
