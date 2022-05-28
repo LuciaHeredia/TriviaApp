@@ -102,10 +102,14 @@ class GameViewController: UIViewController {
         reference = storage.reference(forURL: imagePath)
 
         reference.downloadURL { (url, error) in
-            print("image downloaded!")
-            let data = NSData(contentsOf: url!)
-            let image = UIImage(data: data! as Data)
-            self.flagImageView.image = image
+            if url != nil  {
+                print("Image downloaded!")
+                let data = NSData(contentsOf: url!)
+                let image = UIImage(data: data! as Data)
+                self.flagImageView.image = image
+            } else {
+                print("Failed downloading image!")
+            }
         }
     }
     
