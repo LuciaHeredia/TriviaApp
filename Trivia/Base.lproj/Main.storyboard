@@ -132,7 +132,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="424"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uAj-86-vNE">
-                                                <rect key="frame" x="0.0" y="17" width="414" height="5"/>
+                                                <rect key="frame" x="0.0" y="17" width="414" height="4"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" systemColor="systemGreenColor"/>
@@ -187,13 +187,10 @@
                                         <constraints>
                                             <constraint firstItem="bkw-1y-ecQ" firstAttribute="top" secondItem="pXJ-VK-YeQ" secondAttribute="top" constant="26" id="3lQ-nW-1Rp"/>
                                             <constraint firstItem="YGL-u2-nn4" firstAttribute="top" secondItem="pXJ-VK-YeQ" secondAttribute="top" constant="32" id="Fzl-7B-ki4"/>
-                                            <constraint firstItem="GI7-RH-af3" firstAttribute="centerY" secondItem="pXJ-VK-YeQ" secondAttribute="centerY" constant="14" id="H3H-c3-UxY"/>
                                             <constraint firstItem="GI7-RH-af3" firstAttribute="centerX" secondItem="pXJ-VK-YeQ" secondAttribute="centerX" id="L1B-J3-aFJ"/>
                                             <constraint firstItem="YGL-u2-nn4" firstAttribute="leading" secondItem="bkw-1y-ecQ" secondAttribute="trailing" constant="8" id="PAV-hi-HsU"/>
                                             <constraint firstItem="YGL-u2-nn4" firstAttribute="centerX" secondItem="pXJ-VK-YeQ" secondAttribute="centerX" constant="-118.5" id="Ry5-Mz-rPA"/>
-                                            <constraint firstItem="lPK-7w-mR0" firstAttribute="centerY" secondItem="pXJ-VK-YeQ" secondAttribute="centerY" constant="-167" id="ly8-2e-vVa"/>
                                             <constraint firstItem="GI7-RH-af3" firstAttribute="centerY" secondItem="pXJ-VK-YeQ" secondAttribute="centerY" constant="14" id="ooV-Nl-aJq"/>
-                                            <constraint firstItem="YGL-u2-nn4" firstAttribute="centerY" secondItem="pXJ-VK-YeQ" secondAttribute="centerY" constant="-168" id="pEM-cq-2cY"/>
                                             <constraint firstItem="lPK-7w-mR0" firstAttribute="centerX" secondItem="pXJ-VK-YeQ" secondAttribute="centerX" constant="149.5" id="tU4-v6-QIG"/>
                                             <constraint firstItem="Qgc-iz-Wun" firstAttribute="centerY" secondItem="pXJ-VK-YeQ" secondAttribute="centerY" constant="14" id="uW6-oF-Tej"/>
                                             <constraint firstItem="lPK-7w-mR0" firstAttribute="top" secondItem="pXJ-VK-YeQ" secondAttribute="top" constant="33" id="vc9-oP-eGH"/>
