@@ -70,6 +70,11 @@ class GameViewController: UIViewController {
     @IBAction func answerPressed(_ sender: UIButton) {
         if sender.tag == selectedAnswear {
             if gameNumber <  totalGames {
+                // hide image to show spinner
+                self.flagImageView.isHidden = true
+                // loading spinner
+                spinner.isHidden = false
+                spinner.startAnimating()
                 // score increases
                 currentScore += 1
                 currentScoreLabel.text = currentScore.description
@@ -127,10 +132,15 @@ class GameViewController: UIViewController {
         let downloadTask = downloadImageRef.getData(maxSize: twelveMB) { data, error in
             if let data = data {
                 let image = UIImage(data: data)
-                // stop loading spinner
-                self.spinner.stopAnimating()
-                // hiding spinner
-                self.spinner.isHidden = true
+                
+                if self.spinner.isAnimating{
+                    // stop loading spinner
+                    self.spinner.stopAnimating()
+                    // hiding spinner
+                    self.spinner.isHidden = true
+                }
+                // show image
+                self.flagImageView.isHidden = false
                 self.flagImageView.image = image
             }
             print("Failed downloading image!")
