@@ -211,8 +211,7 @@
                                                 </constraints>
                                                 <color key="tintColor" systemColor="systemRedColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Button">
-                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                                <buttonConfiguration key="configuration" style="filled">
                                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -227,8 +226,7 @@
                                                 </constraints>
                                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Button">
-                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                                <buttonConfiguration key="configuration" style="filled">
                                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -243,8 +241,7 @@
                                                 </constraints>
                                                 <color key="tintColor" systemColor="systemRedColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Button">
-                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                                <buttonConfiguration key="configuration" style="filled">
                                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -259,8 +256,7 @@
                                                 </constraints>
                                                 <color key="tintColor" systemColor="systemRedColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Button">
-                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                                <buttonConfiguration key="configuration" style="filled">
                                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                                 </buttonConfiguration>
                                                 <connections>

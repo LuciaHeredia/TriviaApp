@@ -11,30 +11,52 @@ import FirebaseStorage
 public class QuestionBank {
     @Published var list = [Question]()
     
-    var jsonReference: StorageReference {
-        return Storage.storage().reference().child("json")
-    }
-    
     init() {
-        load()
+        self.list = QuestionBank.get()
         shuffleList()
-    }
-    
-    func load() {
-        if let fileLocation = Bundle.main.url(forResource: "flags", withExtension: "json") {
-            do {
-                let data = try Data(contentsOf: fileLocation)
-                let jsonDecoder = JSONDecoder()
-                let dataFromJson = try jsonDecoder.decode([Question].self, from: data)
-                self.list = dataFromJson
-            } catch {
-                print(error)
-            }
-        }
     }
     
     func shuffleList() {
         self.list.shuffle()
     }
         
+}
+
+extension QuestionBank {
+    
+    static func get() -> [Question] {
+        
+        // definitions:
+        let oneMB : Int64 = 1024 * 1024
+        
+        var jsonReference: StorageReference {
+            return Storage.storage().reference().child("json")
+        }
+        let jsonFile : String = "flags.json"
+        let fileRef = jsonReference.child(jsonFile)
+        
+        var tLis = [Question]()
+            
+        let group = DispatchGroup.init()
+        
+        
+        group.enter()
+        // get json file from firebase storage
+        fileRef.getData(maxSize: oneMB) { data, error in
+            do {
+                let jsonDecoder = JSONDecoder()
+                let dataFromJson = try jsonDecoder.decode([Question].self, from: data!)
+                tLis = dataFromJson
+                group.leave()
+            } catch {
+                print("Failed downloading json file!")
+                print(error)
+            }
+        }
+        group.wait()
+        
+        
+        return tLis
+    }
+    
 }

@@ -23,13 +23,19 @@ class GameViewController: UIViewController {
     @IBOutlet weak var optionC: UIButton!
     @IBOutlet weak var optionD: UIButton!
         
+    lazy var background: DispatchQueue = {
+        return DispatchQueue.init(label: "background.queue", attributes: .concurrent)
+    }()
+    
     var imageReference: StorageReference {
         return Storage.storage().reference().child("images")
     }
     let imageEnding = ".png"
+    let twelveMB : Int64 = 1024 * 1024 * 12
     
-    var allQuestions = QuestionBank().list
-    
+    // empty array of Questions
+    var allQuestions = [Question]()
+
     var currentScore: Int = 0, previousScore: Int = 0
     var gameNumber: Int = 0, totalGames: Int = 0
     var livesNumber: Int = 3
@@ -37,12 +43,26 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // loading spinner
         spinner.startAnimating()
+    
+        // load json from firebase
+        self.background.async {
+            self.allQuestions = QuestionBank().list
+            DispatchQueue.main.async {
+                self.prepareGame()
+            }
+        }
+        
+    }
+    
+    func prepareGame() {
         // update
         totalGames = allQuestions.count - 1
         questionLabel.text = (gameNumber+1).description + "/" + (totalGames+1).description
         progressView.frame.size.width = (view.frame.size.width / CGFloat(allQuestions.count)) * CGFloat(gameNumber + 1)
+        
         // start questions
         updateQuestion()
     }
@@ -104,13 +124,14 @@ class GameViewController: UIViewController {
         let imageName = allQuestions[gameNumber].questionImage + imageEnding
         let downloadImageRef = imageReference.child(imageName)
         
-        let downloadTask = downloadImageRef.getData(maxSize: 1024 * 1024 * 12) { data, error in
+        let downloadTask = downloadImageRef.getData(maxSize: twelveMB) { data, error in
             if let data = data {
                 let image = UIImage(data: data)
-                self.spinner.stopAnimating() // stop loading spinner
-                self.spinner.isHidden = true // hiding spinner
+                // stop loading spinner
+                self.spinner.stopAnimating()
+                // hiding spinner
+                self.spinner.isHidden = true
                 self.flagImageView.image = image
-                print("Image downloaded!")
             }
             print("Failed downloading image!")
         }
