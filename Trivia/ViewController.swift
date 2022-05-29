@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // restore Top Score
-        if let value = userDefaults.value(forKey: "name") as? String {
+        if let value = userDefaults.value(forKey: "score") as? String {
         scoreTextView.text = value
         }
         
