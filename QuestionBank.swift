@@ -6,9 +6,14 @@
 //
 
 import Foundation
+import FirebaseStorage
 
 public class QuestionBank {
     @Published var list = [Question]()
+    
+    var jsonReference: StorageReference {
+        return Storage.storage().reference().child("json")
+    }
     
     init() {
         load()

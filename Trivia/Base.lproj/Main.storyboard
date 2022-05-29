@@ -174,6 +174,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Qgc-iz-Wun">
+                                                <rect key="frame" x="157" y="176" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="0dn-2C-nZ4"/>
+                                                    <constraint firstAttribute="height" constant="100" id="lRc-dg-Qxe"/>
+                                                </constraints>
+                                                <color key="color" systemColor="labelColor"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -187,7 +195,9 @@
                                             <constraint firstItem="GI7-RH-af3" firstAttribute="centerY" secondItem="pXJ-VK-YeQ" secondAttribute="centerY" constant="14" id="ooV-Nl-aJq"/>
                                             <constraint firstItem="YGL-u2-nn4" firstAttribute="centerY" secondItem="pXJ-VK-YeQ" secondAttribute="centerY" constant="-168" id="pEM-cq-2cY"/>
                                             <constraint firstItem="lPK-7w-mR0" firstAttribute="centerX" secondItem="pXJ-VK-YeQ" secondAttribute="centerX" constant="149.5" id="tU4-v6-QIG"/>
+                                            <constraint firstItem="Qgc-iz-Wun" firstAttribute="centerY" secondItem="pXJ-VK-YeQ" secondAttribute="centerY" constant="14" id="uW6-oF-Tej"/>
                                             <constraint firstItem="lPK-7w-mR0" firstAttribute="top" secondItem="pXJ-VK-YeQ" secondAttribute="top" constant="33" id="vc9-oP-eGH"/>
+                                            <constraint firstItem="Qgc-iz-Wun" firstAttribute="centerX" secondItem="pXJ-VK-YeQ" secondAttribute="centerX" id="yJU-Zr-UN4"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhZ-PF-38S">
@@ -346,6 +356,7 @@
                         <outlet property="optionD" destination="Rew-Ba-xh1" id="7a2-UQ-6e5"/>
                         <outlet property="progressView" destination="uAj-86-vNE" id="xZH-FR-1dc"/>
                         <outlet property="questionLabel" destination="lPK-7w-mR0" id="PNM-mZ-CLw"/>
+                        <outlet property="spinner" destination="Qgc-iz-Wun" id="Y23-6N-rKn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ADj-Kj-DCH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

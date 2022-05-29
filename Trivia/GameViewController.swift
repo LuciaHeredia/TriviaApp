@@ -13,6 +13,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var livesLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var flagImageView: UIImageView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var currentScoreLabel: UILabel!
     
@@ -25,7 +26,6 @@ class GameViewController: UIViewController {
     var imageReference: StorageReference {
         return Storage.storage().reference().child("images")
     }
-    let initPath = "gs://triviaapp-0522.appspot.com/"
     let imageEnding = ".png"
     
     var allQuestions = QuestionBank().list
@@ -37,6 +37,8 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // loading spinner
+        spinner.startAnimating()
         // update
         totalGames = allQuestions.count - 1
         questionLabel.text = (gameNumber+1).description + "/" + (totalGames+1).description
@@ -95,7 +97,7 @@ class GameViewController: UIViewController {
 
     func updateQuestion() {
         loadImageFromFirebase()
-        loadButtonsFromFirebase()
+        loadButtonsAnswers()
     }
     
     func loadImageFromFirebase() {
@@ -105,6 +107,8 @@ class GameViewController: UIViewController {
         let downloadTask = downloadImageRef.getData(maxSize: 1024 * 1024 * 12) { data, error in
             if let data = data {
                 let image = UIImage(data: data)
+                self.spinner.stopAnimating() // stop loading spinner
+                self.spinner.isHidden = true // hiding spinner
                 self.flagImageView.image = image
                 print("Image downloaded!")
             }
@@ -114,7 +118,7 @@ class GameViewController: UIViewController {
         downloadTask.resume()
     }
     
-    func loadButtonsFromFirebase() {
+    func loadButtonsAnswers() {
         optionA.setTitle(allQuestions[gameNumber].optionA, for: UIControl.State.normal)
         optionB.setTitle(allQuestions[gameNumber].optionB, for: UIControl.State.normal)
         optionC.setTitle(allQuestions[gameNumber].optionC, for: UIControl.State.normal)
