@@ -147,7 +147,7 @@
                                                     <constraint firstAttribute="width" constant="35" id="gDv-yL-r0C"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="GI7-RH-af3">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GI7-RH-af3">
                                                 <rect key="frame" x="37" y="91" width="340" height="270"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="340" id="Rzd-S4-dMh"/>
@@ -355,7 +355,6 @@
     </scenes>
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
-        <image name="noImage" width="450" height="404"/>
         <image name="wp4587617" width="1898" height="3082"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

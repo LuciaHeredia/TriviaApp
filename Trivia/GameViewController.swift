@@ -22,8 +22,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var optionC: UIButton!
     @IBOutlet weak var optionD: UIButton!
         
-    let storage = Storage.storage()
-    var reference: StorageReference!
+    var imageReference: StorageReference {
+        return Storage.storage().reference().child("images")
+    }
     let initPath = "gs://triviaapp-0522.appspot.com/"
     let imageEnding = ".png"
     
@@ -98,19 +99,19 @@ class GameViewController: UIViewController {
     }
     
     func loadImageFromFirebase() {
-        let imagePath = initPath + allQuestions[gameNumber].questionImage + imageEnding
-        reference = storage.reference(forURL: imagePath)
-
-        reference.downloadURL { (url, error) in
-            if url != nil  {
-                print("Image downloaded!")
-                let data = NSData(contentsOf: url!)
-                let image = UIImage(data: data! as Data)
+        let imageName = allQuestions[gameNumber].questionImage + imageEnding
+        let downloadImageRef = imageReference.child(imageName)
+        
+        let downloadTask = downloadImageRef.getData(maxSize: 1024 * 1024 * 12) { data, error in
+            if let data = data {
+                let image = UIImage(data: data)
                 self.flagImageView.image = image
-            } else {
-                print("Failed downloading image!")
+                print("Image downloaded!")
             }
+            print("Failed downloading image!")
         }
+        
+        downloadTask.resume()
     }
     
     func loadButtonsFromFirebase() {
