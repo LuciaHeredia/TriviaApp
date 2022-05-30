@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		843C92AA014079C8C687C011 /* Pods_Trivia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F74BA6DE4151671A040D0E63 /* Pods_Trivia.framework */; };
-		C38765CA2839615B00AFE5D6 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38765C92839615B00AFE5D6 /* QuestionBank.swift */; };
 		C387765F2842B05E004EBD6F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C387765E2842B05E004EBD6F /* GoogleService-Info.plist */; };
 		C38776612842C347004EBD6F /* flags.json in Resources */ = {isa = PBXBuildFile; fileRef = C38776602842C347004EBD6F /* flags.json */; };
 		C38776632842C48C004EBD6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38776622842C48C004EBD6F /* ViewController.swift */; };
+		C38FDB5D284552B7007A438A /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38FDB5C284552B7007A438A /* QuestionBank.swift */; };
 		C39188282838E1CA00E5EABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39188272838E1CA00E5EABA /* AppDelegate.swift */; };
 		C391882A2838E1CA00E5EABA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39188292838E1CA00E5EABA /* SceneDelegate.swift */; };
 		C391882F2838E1CA00E5EABA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C391882D2838E1CA00E5EABA /* Main.storyboard */; };
@@ -24,10 +24,10 @@
 /* Begin PBXFileReference section */
 		0B486F59AC188266E3720462 /* Pods-Trivia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trivia.release.xcconfig"; path = "Target Support Files/Pods-Trivia/Pods-Trivia.release.xcconfig"; sourceTree = "<group>"; };
 		7797B8304F104B8537736E24 /* Pods-Trivia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trivia.debug.xcconfig"; path = "Target Support Files/Pods-Trivia/Pods-Trivia.debug.xcconfig"; sourceTree = "<group>"; };
-		C38765C92839615B00AFE5D6 /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuestionBank.swift; path = ../QuestionBank.swift; sourceTree = "<group>"; };
 		C387765E2842B05E004EBD6F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C38776602842C347004EBD6F /* flags.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flags.json; sourceTree = "<group>"; };
 		C38776622842C48C004EBD6F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C38FDB5C284552B7007A438A /* QuestionBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
 		C39188242838E1CA00E5EABA /* Trivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C39188272838E1CA00E5EABA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C39188292838E1CA00E5EABA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 				C38776622842C48C004EBD6F /* ViewController.swift */,
 				C391883B2839042100E5EABA /* GameViewController.swift */,
 				C391883E2839296D00E5EABA /* Question.swift */,
-				C38765C92839615B00AFE5D6 /* QuestionBank.swift */,
+				C38FDB5C284552B7007A438A /* QuestionBank.swift */,
 				C39188272838E1CA00E5EABA /* AppDelegate.swift */,
 				C39188292838E1CA00E5EABA /* SceneDelegate.swift */,
 				C391882D2838E1CA00E5EABA /* Main.storyboard */,
@@ -228,7 +228,7 @@
 				C391883C2839042100E5EABA /* GameViewController.swift in Sources */,
 				C39188282838E1CA00E5EABA /* AppDelegate.swift in Sources */,
 				C391882A2838E1CA00E5EABA /* SceneDelegate.swift in Sources */,
-				C38765CA2839615B00AFE5D6 /* QuestionBank.swift in Sources */,
+				C38FDB5D284552B7007A438A /* QuestionBank.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
