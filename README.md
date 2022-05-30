@@ -22,3 +22,6 @@ A correct answer adds a point to the score. A wrong answer decreases the number 
 If there are no more LIVES to use or we reached the last question, a message appears letting us know if we beat the Top score or not.<br />
 If we did beat the Top score, when returning to the Home screen we will see it there. <br />
 
+The app uses Firebase Storage, which stores:
+- all the images.
+- a Json file with all the questions and answers.
