@@ -25,3 +25,6 @@ If we did beat the Top score, when returning to the Home screen we will see it t
 The app uses Firebase Storage, which stores:
 - all the images.
 - a Json file with all the questions and answers.
+
+## App created with:
+* Xcode: Swift. 
